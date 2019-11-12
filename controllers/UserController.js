@@ -1,0 +1,100 @@
+'use strict';
+
+const User = require("../models/User");
+
+//Metodo para obtener todos los usuarios
+
+const getAll = (req, res)=>{
+    User.find((err, users)=>{
+        if(err) return res.status(500).json({message: "Something went wrong trying to get all the users :(", state: "Failure"})
+
+        if(users){
+            res.status(200).json(users,{message: "OK", state: "Success!"});
+        }else{
+            res.status(404).json({message: "There isn't any users"});
+        }
+    });
+}
+
+//Metodo para obtener a un usuario
+const getOneById = (req, res)=>{
+    let id = req.params.id;
+
+    User.findById(id, (err, user)=>{
+        if(err) return res.status(500).json({message:"Something went wrong trying to get the user :(", state: "Failure"});
+
+        if(user){
+            res.status(200).json(user, {message: "OK", state: "Success!"});
+        }else{
+            res.status(404).json({message:"User not found", state: "Failure"});
+        }
+    });
+}
+
+//Metodo para insertar nuevo usuario
+/**
+ * METHOD POST
+ * BODY:{
+ *      username : {type: String, unique: true},
+ *      email: {type: String, unique: true},
+ *      password: {required: true, type: String}
+ * }
+ * 
+ */
+const insertNewUser = (req, res)=>{
+    let new_user = new User(req.body);
+
+    new_user.save((err)=>{
+        if(err) return res.status(500).json({message:"Something happend trying to insert the new user"});
+
+        res.status(200).json({message:"Inserting the user was successful", state: "Success!"});
+    });
+}
+
+/**
+ * 
+ * METHOD PUT
+ */
+const updateUser = (req, res)=>{
+    let user = req.body;
+
+    if(!user._id){
+        return res.status(400).json({message: "The id is required"});
+    }
+
+    User.update({_id: user._id}, user)
+        .then(value =>{
+            res.status(200).json({message: "The update was successfully done!"});
+        })
+        .catch((err)=>{
+            res.status(500).json({ message: "Something happened trying to update the user" });
+        })
+}
+
+/**
+ * 
+ * METHOD DELETE
+ */
+const deleteUser = (req, res)=>{
+    let user = req.body;
+
+    if(!user._id){
+        return res.status(400).json({message: "The id is required"});
+    }
+
+    User.deleteOne({_id: user._id})
+        .then( deleted =>{
+            res.status(200).json({message: "The user was successfully deleted!"});
+        })
+        .catch( err =>{
+            res.status(500).json({ message: "Something happened trying to delete the user" });
+        })
+}
+
+module.exports = {
+    insertNewUser,
+    getAll,
+    getOneById,
+    deleteUser,
+    updateUser
+}
