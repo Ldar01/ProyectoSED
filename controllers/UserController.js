@@ -9,7 +9,7 @@ const getAll = (req, res)=>{
         if(err) return res.status(500).json({message: "Something went wrong trying to get all the users :(", state: "Failure"})
 
         if(users){
-            res.status(200).json(users,{message: "OK", state: "Success!"});
+            res.status(200).json({message: "OK", state: "Success!", usuarios:users});
         }else{
             res.status(404).json({message: "There isn't any users"});
         }
@@ -24,7 +24,7 @@ const getOneById = (req, res)=>{
         if(err) return res.status(500).json({message:"Something went wrong trying to get the user :(", state: "Failure"});
 
         if(user){
-            res.status(200).json(user, {message: "OK", state: "Success!"});
+            res.status(200).json({message: "OK", state: "Success!", usuario: user});
         }else{
             res.status(404).json({message:"User not found", state: "Failure"});
         }
@@ -45,9 +45,9 @@ const insertNewUser = (req, res)=>{
     let new_user = new User(req.body);
 
     new_user.save((err)=>{
-        if(err) return res.status(500).json({message:"Something happend trying to insert the new user"});
+        if(err) return res.status(500).json({message:"Something happend trying to insert the new user", error: err});
 
-        res.status(200).json({message:"Inserting the user was successful", state: "Success!"});
+        res.status(200).json({message:"Inserting the user was successful", state: "Success!", user: new_usern});
     });
 }
 
@@ -59,15 +59,15 @@ const updateUser = (req, res)=>{
     let user = req.body;
 
     if(!user._id){
-        return res.status(400).json({message: "The id is required"});
+        return res.status(400).json({message: "The id is required", usuario: user});
     }
 
     User.update({_id: user._id}, user)
         .then(value =>{
-            res.status(200).json({message: "The update was successfully done!"});
+            res.status(200).json({message: "The update was successfully done!", usuario: user});
         })
         .catch((err)=>{
-            res.status(500).json({ message: "Something happened trying to update the user" });
+            res.status(500).json({ message: "Something happened trying to update the user", usuario: user });
         })
 }
 
@@ -91,10 +91,29 @@ const deleteUser = (req, res)=>{
         })
 }
 
+/**
+ * METHOD GET
+ */
+
+ const getByUsername = (req,res)=>{
+    let username = req.params.username;
+
+    User.findOne(username, (err, user)=>{
+        if(err) return res.status(500).json({message:"Something went wrong trying to get the user :(", state: "Failure"});
+
+        if(user){
+            res.status(200).json({message: "OK", state: "Success!", usuario: user});
+        }else{
+            res.status(404).json({message:"User not found", state: "Failure"});
+        }
+    });
+ }
+
 module.exports = {
     insertNewUser,
     getAll,
     getOneById,
     deleteUser,
-    updateUser
+    updateUser,
+    getByUsername
 }

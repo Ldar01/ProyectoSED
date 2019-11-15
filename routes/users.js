@@ -5,6 +5,7 @@ var UserController = require("../controllers/UserController");
 /* GET users listing. */
 router.get('/', UserController.getAll);
 router.get('/:id', UserController.getOneById);
+router.get('/:username', UserController.getByUsername);
 
 //Create
 router.post('/', UserController.insertNewUser);
