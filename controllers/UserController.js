@@ -56,19 +56,25 @@ const insertNewUser = (req, res)=>{
  * METHOD PUT
  */
 const updateUser = (req, res)=>{
-    let user = req.body;
-
-    if(!user._id){
-        return res.status(400).json({message: "The id is required", usuario: user});
+    if(req.params.id){
+        var update =  {
+            username: req.body.username,
+            email: req.body.email,
+            password: req.body.password
+        };
+        User.findByIdAndUpdate(req.params.id, update,(err,user)=>{
+            if(err){
+                res.status(500);
+                return res.json({"Ok": false, error: err});
+            }
+            else{
+                res.json({"Ok": true, old: user, new: update});
+            }
+        });
     }
-
-    User.update({_id: user._id}, user)
-        .then(value =>{
-            res.status(200).json({message: "The update was successfully done!", usuario: user});
-        })
-        .catch((err)=>{
-            res.status(500).json({ message: "Something happened trying to update the user", usuario: user });
-        })
+    else{
+        res.status(400).json({message: "Id required"});
+    }
 }
 
 /**
@@ -76,19 +82,20 @@ const updateUser = (req, res)=>{
  * METHOD DELETE
  */
 const deleteUser = (req, res)=>{
-    let user = req.body;
-
-    if(!user._id){
-        return res.status(400).json({message: "The id is required"});
+    if(req.params.id){
+        User.findByIdAndDelete(req.params.id,function(err,user){
+            if(err){
+                res.status(500);
+                return res.json({"Ok": false, error: err});
+            }
+            else{
+                res.json({"Ok": true, deleted: user});
+            }
+        });
     }
-
-    User.deleteOne({_id: user._id})
-        .then( deleted =>{
-            res.status(200).json({message: "The user was successfully deleted!"});
-        })
-        .catch( err =>{
-            res.status(500).json({ message: "Something happened trying to delete the user" });
-        })
+    else{
+        res.status(400).json({message: "The id is required"});
+    }
 }
 
 /**
