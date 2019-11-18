@@ -1,6 +1,7 @@
 'use strict';
 
 const User = require("../models/User");
+var passwordHash = require('password-hash');
 
 //Metodo para obtener todos los usuarios
 
@@ -43,6 +44,7 @@ const getOneById = (req, res)=>{
  */
 const insertNewUser = (req, res)=>{
     let new_user = new User(req.body);
+    //var hashedPassword = passwordHash.generate(new_user.password)
 
     new_user.save((err)=>{
         if(err) return res.status(500).json({message:"Something happend trying to insert the new user", error: err});
