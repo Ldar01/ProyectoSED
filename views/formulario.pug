@@ -3,67 +3,28 @@ head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(rel='stylesheet' href='/stylesheets/bootstrap.css')
   title Formulario
 form
   fieldset
-    legend Legend
+    legend Crea un nuevo evento
     .form-group.row
       label.col-sm-2.col-form-label(for='staticEmail') Email
       .col-sm-10
         input#staticEmail.form-control-plaintext(type='text' readonly='' value='email@example.com')
     .form-group
-      label(for='exampleInputEmail1') Email address
-      input#exampleInputEmail1.form-control(type='email' aria-describedby='emailHelp' placeholder='Enter email')
-      small#emailHelp.form-text.text-muted We&apos;ll never share your email with anyone else.
+      label(for='exampleInputEmail1') Evento
+      input#exampleInputEmail1.form-control(type='text' placeholder='Nombre del evento')
     .form-group
-      label(for='exampleInputPassword1') Password
-      input#exampleInputPassword1.form-control(type='password' placeholder='Password')
+      label(for='exampleInputEmail1') Lugar
+      input#exampleInputEmail1.form-control(type='text' placeholder='Nombre del lugar')
     .form-group
-      label(for='exampleSelect1') Example select
-      select#exampleSelect1.form-control
-        option 1
-        option 2
-        option 3
-        option 4
-        option 5
+      label(for='exampleInputEmail1') Organizador
+      input#exampleInputEmail1.form-control(type='text' placeholder='Nombre del organizador')
     .form-group
-      label(for='exampleSelect2') Example multiple select
-      select#exampleSelect2.form-control(multiple='')
-        option 1
-        option 2
-        option 3
-        option 4
-        option 5
+      label(for='exampleInputEmail1') Costo
+      input#exampleInputEmail1.form-control(type='text' placeholder='$0.00')
     .form-group
-      label(for='exampleTextarea') Example textarea
-      textarea#exampleTextarea.form-control(rows='3')
-    .form-group
-      label(for='exampleInputFile') File input
-      input#exampleInputFile.form-control-file(type='file' aria-describedby='fileHelp')
-      small#fileHelp.form-text.text-muted
-        | This is some placeholder block-level help text for the above input. It&apos;s a bit lighter and easily wraps to a new line.
-    fieldset.form-group
-      legend Radio buttons
-      .form-check
-        label.form-check-label
-          input#optionsRadios1.form-check-input(type='radio' name='optionsRadios' value='option1' checked='')
-          |                 Option one is this and that&mdash;be sure to include why it&apos;s great
-      .form-check
-        label.form-check-label
-          input#optionsRadios2.form-check-input(type='radio' name='optionsRadios' value='option2')
-          |                 Option two can be something else and selecting it will deselect option one
-      .form-check.disabled
-        label.form-check-label
-          input#optionsRadios3.form-check-input(type='radio' name='optionsRadios' value='option3' disabled='')
-          |                 Option three is disabled
-    fieldset.form-group
-      legend Checkboxes
-      .form-check
-        label.form-check-label
-          input.form-check-input(type='checkbox' value='' checked='')
-          |                 Option one is this and that&mdash;be sure to include why it&apos;s great
-      .form-check.disabled
-        label.form-check-label
-          input.form-check-input(type='checkbox' value='' disabled='')
-          |                 Option two is disabled
+      label(for='exampleInputEmail1') Descripcion
+      input#exampleInputEmail1.form-control(type='text' placeholder='Escriba aqui')
     button.btn.btn-primary(type='submit') Submit

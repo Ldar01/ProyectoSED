@@ -43,15 +43,25 @@ const getOneById = (req, res)=>{
  * 
  */
 const insertNewUser = (req, res)=>{
-    let new_user = new User(req.body);
-    //var hashedPassword = passwordHash.generate(new_user.password)
-
-    new_user.save((err)=>{
-        if(err) return res.status(500).json({message:"Something happend trying to insert the new user", error: err});
-
-        res.status(200).json({message:"Inserting the user was successful", state: "Success!", user: new_usern});
-    });
+    if(req.body.username != '' && req.body.email != '' && req.body.password != ''){
+        var data = {
+            username: req.body.username,
+            email: req.body.email,
+            password: passwordHash.generate(req.body.password)
+        }
+    
+        let new_user = new User(data);
+    
+        new_user.save((err)=>{
+            if(err) return res.status(500).json({message:"Something happend trying to insert the new user", error: err});
+    
+            res.status(200).json({message:"Inserting the user was successful", state: "Success!", user: data});
+        });
+    }else{
+        res.status(400).json({message:"Faltan campos por llenar"})
+    } 
 }
+
 
 /**
  * 

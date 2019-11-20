@@ -1,0 +1,213 @@
+doctype html
+head
+  // Site Title
+  title Home
+  meta(name='format-detection' content='telephone=no')
+  meta(name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(charset='utf-8')
+  link(rel='icon' href='images/favicon.ico' type='image/x-icon')
+  // Stylesheets
+  link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Fira+Sans:300,600,800,800i%7COpen+Sans:300,400,400i')
+  link(rel='stylesheet' href='stylesheets/bootstrap.css')
+  link(rel='stylesheet' href='stylesheets/style.css')
+  link(rel='stylesheet' href='stylesheets/fonts.css')
+  style.
+    .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+.ie-panel
+  a(href='http://windows.microsoft.com/en-US/internet-explorer/')
+    img(src='images/ie8-panel/warning_bar_0000_us.jpg' height='42' width='820' alt='You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.')
+.preloader
+  .cssload-container
+    svg.filter(version='1.1')
+      defs
+        filter#gooeyness
+          fegaussianblur(in='SourceGraphic' stddeviation='10' result='blur')
+          fecolormatrix(in='blur' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10' result='gooeyness')
+          fecomposite(in='SourceGraphic' in2='gooeyness' operator='atop')
+    .dots
+      .dot.mainDot
+      .dot
+      .dot
+      .dot
+      .dot
+    p Loading...
+// Page
+.page
+  a.banner.banner-top(href='https://www.templatemonster.com/intense-multipurpose-html-template.html' target='_blank')
+  header.page-header
+    // RD Navbar
+    .rd-navbar-wrap
+      nav.rd-navbar.rd-navbar_transparent.rd-navbar_boxed(data-layout='rd-navbar-fixed' data-sm-layout='rd-navbar-fixed' data-sm-device-layout='rd-navbar-fixed' data-md-layout='rd-navbar-fixed' data-md-device-layout='rd-navbar-fixed' data-lg-device-layout='rd-navbar-fixed' data-lg-layout='rd-navbar-static' data-xl-device-layout='rd-navbar-static' data-xl-layout='rd-navbar-static' data-xxl-device-layout='rd-navbar-static' data-xxl-layout='rd-navbar-static' data-stick-up-clone='false' data-sm-stick-up='true' data-md-stick-up='true' data-lg-stick-up='true' data-md-stick-up-offset='115px' data-lg-stick-up-offset='35px' data-body-class='rd-navbar-absolute')
+        // RD Navbar Top Panel
+        .rd-navbar-top-panel
+          .rd-navbar-top-panel__main
+            .rd-navbar-top-panel__toggle.rd-navbar-fixed__element-1.rd-navbar-static--hidden(data-rd-navbar-toggle='.rd-navbar-top-panel__main')
+              span
+        .rd-navbar-inner.rd-navbar-search-wrap
+          // RD Navbar Panel
+          .rd-navbar-panel.rd-navbar-search-lg_collapsable
+            button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+              span
+            // RD Navbar Brand
+            .rd-navbar-brand
+              a.brand-name(href='index.html', color="#000") Cuidando El Planeta
+                img(src='images/profile2.png' ) 
+          // RD Navbar Nav
+          .rd-navbar-nav-wrap.rd-navbar-search_not-collapsable
+            .rd-navbar-search_collapsable
+              ul.rd-navbar-nav
+                if (!user)
+                  li
+                    a(href='/login') Login
+                    
+                  li
+                    a(href='/registro') Register
+                if (user)
+                  li
+                    a#welcome Welcome #{user.username}
+                  li
+                    a(href='/logout') Logout
+  // Swiper
+  svg.defs
+    defs
+      lineargradient#gradient1(x1='0%' y1='0%' x2='100%' y2='100%')
+        stop(offset='50%' stop-color='#AA54ED')
+          animate(attributename='stop-color' values='#AA54ED; #5348E2; #AA54ED' dur='5s' repeatcount='indefinite')
+        stop(offset='100%' stop-color='#5348E2')
+          animate(attributename='stop-color' values='#5348E2; #AA54ED; #5348E2' dur='5s' repeatcount='indefinite')
+  .swiper-container.swiper-slider(data-effect='frame-trapeze' data-loop='true' data-autoplay='5500' data-speed='1200' data-mousewheel='false' data-keyboard='true' data-frame-fill='url(#gradient1)')
+    .swiper-wrapper
+      .swiper-slide
+        .swiper-slide-img(style='background-image: url(images/cuidado1.jpg);' data-swiper-anime='{ "animation": "swiperSlideRotate", "duration": 2000, "delay": 600 }')
+        .swiper-slide-caption.text-center.context-dark
+          h1(data-swiper-anime='{ "animation": "swiperContentStack", "duration": 1000, "delay": 500 }') Element
+          h3(data-swiper-anime='{ "animation": "swiperContentStack", "duration": 1000, "delay": 600 }') New HTML Templates Generation
+          .group-lg.group-middle(data-swiper-anime='{ "animation": "swiperContentStack", "duration": 1000, "delay": 700 }')
+  
+      .swiper-slide
+        .swiper-slide-img(style='background-image: url(images/cuidado2.jpg);' data-swiper-anime='{ "animation": "swiperSlideRotate", "duration": 2000, "delay": 600 }')
+        .swiper-slide-caption.context-dark
+          h2(data-swiper-anime='{ "animation": "swiperContentStack", "duration": 1000, "delay": 500 }')
+            | The Power of Bootstrap
+            br.d-none.d-lg-block
+            |  Discover it with Element
+      .swiper-slide
+        .swiper-slide-img(style='background-image: url(images/cuidado5.jpg);' data-swiper-anime='{ "animation": "swiperSlideRotate", "duration": 2000, "delay": 600 }')
+        .swiper-slide-caption.context-dark
+          .container
+            .row.justify-content-center
+              .col-lg-7
+                h2(data-swiper-anime='{ "animation": "swiperContentStack", "duration": 1000, "delay": 500 }') Built by geeks &amp; used by humans
+                h5.text-width-2.block-centered(data-swiper-anime='{ "animation": "swiperContentStack", "duration": 1000, "delay": 600 }')
+                  | Element aims to satisfy real needs of real projects. We&apos;ve got a pack of tools for that.
+                .group-lg.group-middle(data-swiper-anime='{ "animation": "swiperContentStack", "duration": 1000, "delay": 700 }')
+            
+    .swiper-pagination
+    .swiper-button-prev.linear-icon-chevron-left
+    .swiper-button-next.linear-icon-chevron-right
+  section.section-xs.section-cta.bg-gray-dark.text-center.text-md-left
+    .container
+      .row.row-30.justify-content-between.align-items-center
+        .col-12.col-md-8
+          h4 Like What We Offer?
+          p
+            | Start with this demo now or check out the others in the full version of this template.
+        .col-12.col-md-4.text-md-right
+          a.button.button-primary(href='about.html') Read more
+  // Page Footer
+  a.banner(href='https://www.templatemonster.com/intense-multipurpose-html-template.html' target='_blank')
+    img(src='images/intense_big_02.jpg' alt='' height='0')
+  section.pre-footer-corporate.bg-image-7.bg-overlay-darkest
+    .container
+      .row.justify-content-sm-center.justify-content-lg-start.row-30.row-md-60
+        .col-sm-10.col-md-6.col-lg-10.col-xl-3
+          h6 About
+          p
+            | Element is HTML template that fits for both developers and beginners. It comes loaded with an assortment of tools and features that make customization process much easier. A pack of child themes available with the full version of this template, allows users to create a fully functional site for any specific business quickly and worry-free.
+        .col-sm-10.col-md-6.col-lg-3.col-xl-3
+          h6 Navigation
+          ul.list-xxs
+            li
+              a(href='about.html') About
+            li
+              a(href='#') Why Choose Us
+            li
+              a(href='#') Our Services
+            li
+              a(href='#') Portfolio
+            li
+              a(href='#') Our Partners
+        .col-sm-10.col-md-6.col-lg-5.col-xl-3
+          h6 Recent Comments
+          ul.list-xs
+            li
+              // Comment minimal
+              article.comment-minimal
+                p.comment-minimal__author Brian Williamson on
+                p.comment-minimal__link
+                  a(href='#') Site Speed and Search Engines Optimization Aspects
+            li
+              // Comment minimal
+              article.comment-minimal
+                p.comment-minimal__author Brian Williamson on
+                p.comment-minimal__link
+                  a(href='#') 5 Things to Know Before You Buy an HTML Template
+            li
+              // Comment minimal
+              article.comment-minimal
+                p.comment-minimal__author Brian Williamson on
+                p.comment-minimal__link
+                  a(href='#') Turning Your Site into a Sales Machine
+        .col-sm-10.col-md-6.col-lg-4.col-xl-3
+          h6 Contacts
+          ul.list-xs
+            li
+              dl.list-terms-minimal
+                dt Address
+                dd 4578 Marmora Road, Glasgow, D04 89GR
+            li
+              dl.list-terms-minimal
+                dt Phones
+                dd
+                  ul.list-semicolon
+                    li
+                      a(href='tel:#') (800) 123-0045
+                    li
+                      a(href='tel:#') (800) 123-0045
+            li
+              dl.list-terms-minimal
+                dt E-mail
+                dd
+                  a(href='mailto:#') info@demolink.org
+            li
+              dl.list-terms-minimal
+                dt Opening Hours:
+                dd Mn-Fr: 10 am-8 pm
+  footer.footer-corporate.bg-gray-darkest
+    .container
+      .footer-corporate__inner
+        p.rights
+          span Element
+          span &nbsp;
+          span.copyright-year
+          | . All Rights Reserved. Design by 
+          a(href='https://www.templatemonster.com') TemplateMonster
+        ul.list-inline-xxs
+          li
+            a.icon.icon-xxs.icon-primary.fa.fa-facebook(href='#')
+          li
+            a.icon.icon-xxs.icon-primary.fa.fa-twitter(href='#')
+          li
+            a.icon.icon-xxs.icon-primary.fa.fa-google-plus(href='#')
+          li
+            a.icon.icon-xxs.icon-primary.fa.fa-vimeo(href='#')
+          li
+            a.icon.icon-xxs.icon-primary.fa.fa-youtube(href='#')
+          li
+            a.icon.icon-xxs.icon-primary.fa.fa-pinterest(href='#')
+// Global Mailform Output
+#form-output-global.snackbars
+// Javascript
+script(src='javascripts/core.min.js')
+script(src='javascripts/script.js')

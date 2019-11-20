@@ -1,0 +1,228 @@
+doctype html
+head
+  // Site Title
+  title About
+  meta(name='format-detection' content='telephone=no')
+  meta(name='viewport' content='width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(charset='utf-8')
+  link(rel='icon' href='images/favicon.ico' type='image/x-icon')
+  // Stylesheets
+  link(rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Fira+Sans:300,600,800,800i%7COpen+Sans:300,400,400i')
+  link(rel='stylesheet' href='stylesheets/bootstrap.css')
+  link(rel='stylesheet' href='stylesheets/style.css')
+  link(rel='stylesheet' href='stylesheets/fonts.css')
+  style.
+    .ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}
+.ie-panel
+  a(href='http://windows.microsoft.com/en-US/internet-explorer/')
+    img(src='images/ie8-panel/warning_bar_0000_us.jpg' height='42' width='820' alt='You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.')
+.preloader
+  .cssload-container
+    svg.filter(version='1.1')
+      defs
+        filter#gooeyness
+          fegaussianblur(in='SourceGraphic' stddeviation='10' result='blur')
+          fecolormatrix(in='blur' values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10' result='gooeyness')
+          fecomposite(in='SourceGraphic' in2='gooeyness' operator='atop')
+    .dots
+      .dot.mainDot
+      .dot
+      .dot
+      .dot
+      .dot
+    p Loading...
+// Page
+.page
+  // Page header
+  header.page-header
+    // RD Navbar
+    .rd-navbar-wrap
+      nav.rd-navbar.rd-navbar-default(data-layout='rd-navbar-fixed' data-sm-layout='rd-navbar-fixed' data-sm-device-layout='rd-navbar-fixed' data-md-layout='rd-navbar-fixed' data-md-device-layout='rd-navbar-fixed' data-lg-device-layout='rd-navbar-static' data-lg-layout='rd-navbar-static' data-xl-device-layout='rd-navbar-static' data-xl-layout='rd-navbar-static' data-xxl-device-layout='rd-navbar-static' data-xxl-layout='rd-navbar-static' data-stick-up-clone='false' data-sm-stick-up='true' data-md-stick-up='true' data-lg-stick-up='true' data-md-stick-up-offset='115px' data-lg-stick-up-offset='35px')        
+        .rd-navbar-inner.rd-navbar-search-wrap
+          // RD Navbar Panel
+          .rd-navbar-panel.rd-navbar-search-lg_collapsable
+            button.rd-navbar-toggle(data-rd-navbar-toggle='.rd-navbar-nav-wrap')
+              span
+            // RD Navbar Brand
+            .rd-navbar-brand
+              a.brand-name(href='index.html')
+                img(src='images/logo-344x67.png' alt='' width='172' height='33')
+          // RD Navbar Nav
+          .rd-navbar-nav-wrap.rd-navbar-search_not-collapsable
+            .rd-navbar-search_collapsable
+              ul.rd-navbar-nav
+                li
+                  a(href='index.html') Home
+                li.active
+                  a(href='about.html') About
+                li
+                  a(href='typography.html') Typography
+                li
+                  a(href='contacts.html') Contacts
+  section.section.parallax-container.context-dark(data-parallax-img='images/parallax-1.jpg')
+    .parallax-content.parallax-header
+      .parallax-header__inner.context-dark.text-center
+        .parallax-header__content
+          .container
+            .row.justify-content-sm-center
+              .col-md-10.col-xl-8
+                h2.heading-decorated About
+  // features
+  // Our Features
+  section.section-md.bg-gray-lighter.text-center.decor-text(data-content='Services')
+    .container
+      .row.justify-content-lg-center
+        .col-lg-10.col-xl-8
+          h4.heading-decorated Our Services
+          p
+            | Our company offers flexible &amp; reliable website templates as well as extensive customer support so you don&rsquo;t have to worry about hiring an expensive web design company. We build all types of web templates and all of them can be used as a basis for your website.
+      .row.row-50
+        .col-md-6.col-lg-4
+          // Blurb circle
+          article.blurb.blurb-circle.blurb-circle_centered
+            .blurb-circle__icon
+              span.icon.linear-icon-feather
+            p.blurb__title Clean and Crispy Design
+            p
+              | Element is crafted by top industry leaders with love, care and customer needs in mind.
+        .col-md-6.col-lg-4
+          // Blurb circle
+          article.blurb.blurb-circle.blurb-circle_centered
+            .blurb-circle__icon
+              span.icon.linear-icon-menu3
+            p.blurb__title Novi Builder
+            p Use our Novi Builder to customize and update your website within seconds.
+        .col-md-6.col-lg-4
+          // Blurb circle
+          article.blurb.blurb-circle.blurb-circle_centered
+            .blurb-circle__icon
+              span.icon.linear-icon-bag2
+            p.blurb__title Advanced UI Toolkit
+            p
+              | Element comes with a powerful and flexible extended toolkit in addition to basic Bootstrap.
+        .col-md-6.col-lg-4
+          // Blurb circle
+          article.blurb.blurb-circle.blurb-circle_centered
+            .blurb-circle__icon
+              span.icon.linear-icon-rocket
+            p.blurb__title Built For Speed
+            p
+              | Our template was built for speed. Get the best results at GTmetrix and Google PageSpeed.
+        .col-md-6.col-lg-4
+          // Blurb circle
+          article.blurb.blurb-circle.blurb-circle_centered
+            .blurb-circle__icon
+              span.icon.linear-icon-equalizer
+            p.blurb__title Flexible and Multipurpose
+            p Element allows creating various websites for complex and scalable projects.
+        .col-md-6.col-lg-4
+          // Blurb circle
+          article.blurb.blurb-circle.blurb-circle_centered
+            .blurb-circle__icon
+              span.icon.linear-icon-file-search
+            p.blurb__title SEO Friendly
+            p Valid code and performance optimized framework make SEO easy and hassle free.
+  // Testimonials
+  section.section-md.bg-default.text-center.decor-text(data-content='Testimonials')
+    .container
+      h4.heading-decorated WHAT PEOPLE SAY
+      .row.row-50
+        .col-md-6
+          // Quote default
+          .quote-default.quote-default_left
+            .quote-default__image
+              img(src='images/deborah-quagmire-120x120.jpg' alt='' width='120' height='120')
+            svg.quote-default__mark(version='1.1' baseprofile='tiny' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='40.234px' height='33.484px' viewbox='0 0 30.234 23.484' xml:space='preserve')
+              g
+                path(d='M12.129,0v1.723c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959							c0,0.445,0.07,0.773,0.211,0.984c0.093,0.141,0.199,0.211,0.316,0.211c0.117,0,0.293-0.082,0.527-0.246							c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.519,0.545,3.551,1.635c1.031,1.09,1.547,2.385,1.547,3.885							c0,1.57-0.592,2.953-1.775,4.148c-1.184,1.195-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426							C0.715,19.441,0,17.274,0,14.555c0-3.164,0.972-6,2.918-8.508C4.863,3.539,7.933,1.524,12.129,0z M29.039,0v1.723							c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959c0,0.445,0.07,0.773,0.211,0.984							c0.094,0.141,0.199,0.211,0.316,0.211s0.293-0.082,0.527-0.246c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.52,0.545,3.551,1.635							s1.547,2.385,1.547,3.885c0,1.57-0.592,2.953-1.775,4.148s-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426							s-2.145-3.785-2.145-6.504c0-3.164,0.973-6,2.918-8.508C21.773,3.539,24.844,1.524,29.039,0z')
+            .quote-default__text
+              p.q
+                | In our case, there couldn&rsquo;t be any business without our new website! Element provided us with the template that satisfied all our needs and they were the only company that within the first meeting made me feel very confident and comfortable that they understood and could produce what we envisioned. It&rsquo;s been a terrific experience working with them.
+            p.quote-default__cite Jane Smith
+        .col-md-6
+          // Quote default
+          .quote-default.quote-default_left
+            .quote-default__image
+              img(src='images/benedict-arnold-120x120.jpg' alt='' width='120' height='120')
+            svg.quote-default__mark(version='1.1' baseprofile='tiny' xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='40.234px' height='33.484px' viewbox='0 0 30.234 23.484' xml:space='preserve')
+              g
+                path(d='M12.129,0v1.723c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959							c0,0.445,0.07,0.773,0.211,0.984c0.093,0.141,0.199,0.211,0.316,0.211c0.117,0,0.293-0.082,0.527-0.246							c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.519,0.545,3.551,1.635c1.031,1.09,1.547,2.385,1.547,3.885							c0,1.57-0.592,2.953-1.775,4.148c-1.184,1.195-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426							C0.715,19.441,0,17.274,0,14.555c0-3.164,0.972-6,2.918-8.508C4.863,3.539,7.933,1.524,12.129,0z M29.039,0v1.723							c-2.438,0.891-4.348,2.291-5.73,4.201c-1.383,1.911-2.074,3.897-2.074,5.959c0,0.445,0.07,0.773,0.211,0.984							c0.094,0.141,0.199,0.211,0.316,0.211s0.293-0.082,0.527-0.246c0.75-0.539,1.699-0.809,2.848-0.809c1.336,0,2.52,0.545,3.551,1.635							s1.547,2.385,1.547,3.885c0,1.57-0.592,2.953-1.775,4.148s-2.619,1.793-4.307,1.793c-1.969,0-3.668-0.809-5.098-2.426							s-2.145-3.785-2.145-6.504c0-3.164,0.973-6,2.918-8.508C21.773,3.539,24.844,1.524,29.039,0z')
+            .quote-default__text
+              p.q
+                | My company just launched our completely revamped website based on your template and I couldn&apos;t be any happier with the way it turned out, and our experience with Element. We purchased your template and transformed our old website into a modern and incredibly attractive site. Their team is a perfect mix of left and right brains as they provided me with everything I wanted to know.
+            p.quote-default__cite Kate Wilson
+  // Page Footer
+  section.pre-footer-corporate.bg-image-7.bg-overlay-darkest
+    .container
+      .row.justify-content-sm-center.justify-content-lg-start.row-30.row-md-60
+        .col-sm-10.col-md-6.col-lg-10.col-xl-3
+          a.brand(href='index.html')
+            img(src='images/logo-white-344x67.png' alt='' width='172' height='33')
+          p
+            | Element is HTML template that fits for both developers and beginners. It comes loaded with an assortment of tools and features that make customization process much easier. A pack of child themes, specially designed for various business niches, allows users to create a fully functional site for any specific business quickly and worry-free.
+        .col-sm-10.col-md-6.col-lg-3.col-xl-3
+          h6 Navigation
+          ul.list-xxs.list-primary
+            li
+              a(href='#') What We Offer
+            li
+              a(href='#') Our Team
+            li
+              a(href='#') Our Portfolio
+            li
+              a(href='#') Latest Posts
+            li
+              a(href='#') Clients
+        .col-sm-10.col-md-6.col-lg-4.col-xl-3
+          h6 Contacts
+          ul.list-xs
+            li
+              dl.list-terms-minimal
+                dt Address
+                dd 4578 Marmora Road, Glasgow, D04 89GR
+            li
+              dl.list-terms-minimal
+                dt Phones
+                dd
+                  ul.list-semicolon
+                    li
+                      a(href='tel:#') (800) 123-0045
+                    li
+                      a(href='tel:#') (800) 123-0045
+            li
+              dl.list-terms-minimal
+                dt E-mail
+                dd
+                  a.link-primary(href='mailto:#') info@demolink.org
+            li
+              dl.list-terms-minimal
+                dt We are open
+                dd Mn-Fr: 10 am-8 pm
+  footer.footer-corporate.bg-gray-darkest
+    .container
+      .footer-corporate__inner
+        p.rights
+          span Element
+          span &nbsp;&copy;&nbsp;
+          span.copyright-year
+          | . All Rights Reserved. Design by 
+          a(href='https://www.templatemonster.com') TemplateMonster
+        ul.list-inline-xxs
+          li
+            a.icon.icon-xxs.icon-gray-darker.fa.fa-facebook(href='#')
+          li
+            a.icon.icon-xxs.icon-gray-darker.fa.fa-twitter(href='#')
+          li
+            a.icon.icon-xxs.icon-gray-darker.fa.fa-google-plus(href='#')
+          li
+            a.icon.icon-xxs.icon-gray-darker.fa.fa-vimeo(href='#')
+          li
+            a.icon.icon-xxs.icon-gray-darker.fa.fa-youtube(href='#')
+          li
+            a.icon.icon-xxs.icon-gray-darker.fa.fa-pinterest(href='#')
+// Global Mailform Output
+#form-output-global.snackbars
+// Javascript
+script(src='javascripts/core.min.js')
+script(src='javascripts/script.js')
